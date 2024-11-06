@@ -7,13 +7,13 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif; /* Added fallback font */
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px; /* Adjust based on your header height */
-  min-width: 800px;
-  min-height: 600px;
+  padding-top: 80px;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 header {
@@ -23,20 +23,18 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 25px;
-  background-color: #000; /* Black header */
+  background-color: #000;
   font-weight: bold;
-  position: fixed; /* Fixes the header to the top of the viewport */
-  top: 0; /* Positions the header at the top */
-  left: 0; /* Ensures it starts from the left edge */
-  z-index: 1000; /* Keeps the header on top of other elements */
-  border: none; /* Remove the border property */
-  border-bottom: 2px solid #fff; /* Add a thin white bottom border */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #fff;
 }
 
-
 .logo img {
-  height: auto;
   width: 120px;
+  height: auto;
 }
 
 header nav {
@@ -52,75 +50,67 @@ header nav a {
 }
 
 header nav a:hover {
-  color: purple; 
+  color: purple;
 }
+
 .image {
   width: 100%;
   display: flex;
   justify-content: center;
-  overflow: hidden; 
+  overflow: hidden;
   margin: 0;
 }
+
 .image img {
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
-  object-fit: cover; 
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
 .image2 {
   display: flex;
-  position: relative;
-  justify-content: space-between;
-  gap: 250px;
-  left: 200px;
-  padding: 20px 0;
-  
-}
-.overlay img, .sfx img {
-  width: 500px; /* Ensure consistent image sizes */
-  height: auto;
-  justify-content: space-evenly;
-}
-.image2 a {
-  display: inline-flex;
-  position: relative;
-  top: 270px;
-  right: 931px;
-  font-size: 28px;
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 30px 60px;
+  gap: 20px;
+  padding: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1000;
+}
+
+.overlay img, .sfx img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.image2 a {
+  font-size: 24px;
+  padding: 15px 30px;
   background-color: purple;
   color: #fff;
   text-decoration: none;
   border-radius: 15px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  width: 116px;
-  height: 50px;
+  width: auto;
 }
+
 .image2 a:hover {
-  background-color: #6a0dad; /* Darker shade of purple for hover */
+  background-color: #6a0dad;
 }
+
 .multiple-images {
   width: 100%;
   justify-content: space-evenly;
-  height: 100px;
   overflow: hidden;
 }
+
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  width: 100vw; /* Full viewport width */
-  padding: 50px;
-}
-
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
 }
 
 .grid-item img {
@@ -132,8 +122,9 @@ header nav a:hover {
 .grid-item p {
   text-align: center;
   padding: 5px 0;
-  font-size: 24px;
+  font-size: 16px;
 }
+
 footer {
   width: 100%;
   padding: 20px;
@@ -141,47 +132,104 @@ footer {
   color: #fff;
   text-align: center;
 }
+
 .meme {
   display: flex;
-  justify-content: flex-start;
-  align-items: center; /* Center vertically */
-  width: 100vw;
-  padding: 30px;
-  padding-top: 0px;
-  padding-left: 0px;
-  position: relative; /* Allow absolute positioning of children */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 30px 10px;
 }
 
 .meme img {
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
   height: auto;
 }
 
 .text-wrapper {
-  position: absolute; /* Position text absolutely */
-  top: 45%; /* Adjust for vertical position */
-  left: 20px; /* Align with the image */
-  transform: translateY(-50%); /* Center vertically */
-  padding-left: 630px;
   text-align: center;
 }
+
 .title {
-  font-size: 42px; /* Title font size */
-  font-weight: 600; /* Make the title bold */
-  margin: 0; /* Remove default margin */
-  text-decoration: underline;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
 }
+
 .paragraph {
-  font-size: 32px; /* Paragraph font size */
-  font-weight: 200; /* Light font weight */
-  margin-top: 10px; /* Space between title and paragraph */
-  color: #333; /* Change color for better readability */
+  font-size: 20px;
   font-weight: 400;
+  color: #333;
 }
+
 .free-text {
-  font-size: 60px; /* Adjust size to your preference */
-  color: green; /* Set text color to green */
-  margin-top: 30px; /* Optional: add some space above */
+  font-size: 40px;
+  color: green;
+  margin-top: 20px;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
 
+  header nav a {
+    font-size: 20px;
+  }
+
+  .image2 {
+    gap: 10px;
+  }
+
+  .image2 a {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .paragraph {
+    font-size: 18px;
+  }
+
+  .free-text {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav a {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .image2 {
+    gap: 10px;
+  }
+
+  .image2 a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .free-text {
+    font-size: 24px;
+  }
+}
